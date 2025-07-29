@@ -5,7 +5,7 @@ import './Service.css'
 function Service() {
   return (
     <div className="service-page">
-      {/* Header */}
+     
       <header className="service-header">
         <div className="service-logo">
           <span className="service-logo-icon">IH</span>
@@ -20,7 +20,7 @@ function Service() {
         </nav>
       </header>
 
-      {/* Hero Section */}
+     
       <section className="service-hero">
         <div className="hero-overlay">
           <div className="hero-navigation">
@@ -35,7 +35,7 @@ function Service() {
         </div>
       </section>
 
-      {/* Service Content */}
+      
       <section className="service-content">
         <div className="service-container">
           <div className="service-image">

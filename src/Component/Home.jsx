@@ -3,14 +3,13 @@ import { Link } from 'react-router-dom'
 import './Home.css'
 
 function Home() {
-  // State for editing functionality
+
   const [editing, setEditing] = useState(false);
   const [editingField, setEditingField] = useState(null);
   const [editingButtonId, setEditingButtonId] = useState(null);
   const [editingSection, setEditingSection] = useState(null);
   const [editingIndex, setEditingIndex] = useState(null);
   
-  // Content state
   const [content, setContent] = useState({
     title: "A Luxurious Way To Enjoy Your Life",
     subtitle: "WELCOME TO HOTEL LUXURY",
@@ -82,7 +81,7 @@ function Home() {
 
   const fetchInitialData = async () => {
     try {
-      const response = await fetch("http://localhost:5000/");
+      const response = await fetch("https://sauravagrawal588.pythonanywhere.com/");
       const data = await response.json();
       if (data.content) {
         setContent(data.content);
@@ -104,7 +103,7 @@ function Home() {
         index: index
       };
 
-      const response = await fetch("http://localhost:5000/update-content", {
+      const response = await fetch("https://sauravagrawal588.pythonanywhere.com/update-content", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -208,7 +207,7 @@ function Home() {
     };
 
     try {
-      const res = await fetch("http://localhost:5000/update-section", {
+      const res = await fetch("https://sauravagrawal588.pythonanywhere.com/update-section", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -227,7 +226,7 @@ function Home() {
     if (!newBtn.text || !newBtn.url) return;
     
     try {
-      const response = await fetch("http://localhost:5000/add-button", {
+      const response = await fetch("https://sauravagrawal588.pythonanywhere.com/add-button", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -249,7 +248,7 @@ function Home() {
 
   const handleEditButton = async (buttonId) => {
     try {
-      const response = await fetch(`http://localhost:5000/edit-button/${buttonId}`, {
+      const response = await fetch(`https://sauravagrawal588.pythonanywhere.com/edit-button/${buttonId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -272,7 +271,7 @@ function Home() {
 
   const handleDeleteButton = async (buttonId) => {
     try {
-      const response = await fetch(`http://localhost:5000/delete-button/${buttonId}`, {
+      const response = await fetch(`https://sauravagrawal588.pythonanywhere.com/delete-button/${buttonId}`, {
         method: "DELETE",
       });
       
